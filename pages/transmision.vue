@@ -11,6 +11,7 @@
 import ZoomWindow from '../components/ZoomWindow'
 
 export default {
+
   components: {
     ZoomWindow
   },

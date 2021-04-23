@@ -1,10 +1,11 @@
+
 <template>
 
 
     <div>
 
 
-    <div id="zmmtg-root"></div>
+<div id="zmmtg-root"></div>
     </div>
 
     
@@ -13,11 +14,11 @@
 
 
 <script> 
-import Cookie from 'js-cookie'
+
 import {MEETING_ID, API_KEY, API_SECRET} from '../static/credencialesZoom'
 let logueo
 let signature
-let NAME = Cookie.get('nm')
+let NAME = "nombre"
 /*Esto es como el problema con el cliente y servidor*/
 if (process.browser) {
     const {ZoomMtg} = require('@zoomus/websdk');
@@ -57,7 +58,7 @@ if (process.browser) {
 
     logueo = ZoomMtg.init({
 
-    leaveUrl: "https://zoom.us/",
+    leaveUrl: "zoom.us",
 
     disableInvite: true,
 
@@ -82,7 +83,7 @@ if (process.browser) {
 
             /*userEmail: "email@gmail.com",*/
 
-            passWord: "XXXXXX",
+            passWord: "****",
 
         success: function(res) {
 
