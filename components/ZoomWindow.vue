@@ -4,8 +4,6 @@
 
     <div>
 
-
-<div id="zmmtg-root"></div>
     </div>
 
     
@@ -21,18 +19,18 @@ let signature
 let NAME = "nombre"
 /*Esto es como el problema con el cliente y servidor*/
 if (process.browser) {
-    const {ZoomMtg} = require('@zoomus/websdk');
+    //const {ZoomMtg} = require('@zoomus/websdk');
     
     
     //ZoomMtg.setZoomJSLib('https://dmogdx0jrul3u.cloudfront.net/1.3.7/lib', '/av'); 
     //ZoomMtg.setZoomJSLib('https://dmogdx0jrul3u.cloudfront.net/1.9.1/lib', '/av');
-    ZoomMtg.setZoomJSLib('https://source.zoom.us/1.9.1/lib', '/av'); 
+    this.ZoomMtg.setZoomJSLib('https://source.zoom.us/1.9.1/lib', '/av'); 
     
-    ZoomMtg.preLoadWasm();
+    this.ZoomMtg.preLoadWasm();
 
-    ZoomMtg.prepareJssdk();
+    this.ZoomMtg.prepareJssdk();
 
-     signature = ZoomMtg.generateSignature({
+     signature = this.ZoomMtg.generateSignature({
 
       meetingNumber: MEETING_ID,
 
@@ -52,11 +50,11 @@ if (process.browser) {
 
     });
 
-    ZoomMtg.i18n.load("es-ES");/*borrar este para ver eoso del ingles que lase joinign meeting'*/
-    ZoomMtg.i18n.reload("es-ES");
+    this.ZoomMtg.i18n.load("es-ES");/*borrar este para ver eoso del ingles que lase joinign meeting'*/
+    this.ZoomMtg.i18n.reload("es-ES");
 
 
-    logueo = ZoomMtg.init({
+    logueo = this.ZoomMtg.init({
 
     leaveUrl: "zoom.us",
 
@@ -71,7 +69,7 @@ if (process.browser) {
 
     success: () => {
 
-      ZoomMtg.join({
+      this.ZoomMtg.join({
 
             meetingNumber: MEETING_ID,
 
@@ -83,7 +81,7 @@ if (process.browser) {
 
             /*userEmail: "email@gmail.com",*/
 
-            passWord: "****",
+            passWord: "*******",
 
         success: function(res) {
 

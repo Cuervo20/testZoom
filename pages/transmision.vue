@@ -1,8 +1,8 @@
 <template>
-<div>
+<div id="transmision">
     <zoom-window/> 
 </div>
-
+ 
 
 </template>
 
@@ -11,7 +11,7 @@
 import ZoomWindow from '../components/ZoomWindow'
 
 export default {
-
+  name: 'Transmision',
   components: {
     ZoomWindow
   },
